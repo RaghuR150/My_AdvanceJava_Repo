@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+	
+	<bean id="ord" class="com.kodewala.Order">
+	<property name="orderId" value="3456"></property>
+	<property name="orderName" value="Biriyani"></property>
+	<property name="price" value="252.00"></property>
+	
+	</bean>
+
+
+</beans>
