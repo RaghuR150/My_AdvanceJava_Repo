@@ -12,7 +12,7 @@ public class App
     {
     
     	ApplicationContext context = new AnnotationConfigApplicationContext(SpringConfig.class);
-    	 Employee emp = (Employee) context.getBean("employee");
+    	 Employee emp = (Employee) context.getBean(Employee.class);
     	 
     	 System.out.println(emp.getEmployeeId());
     }
