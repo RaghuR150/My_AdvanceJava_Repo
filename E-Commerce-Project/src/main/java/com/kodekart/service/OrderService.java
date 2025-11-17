@@ -106,7 +106,7 @@ public class OrderService {
             }
         }
 
-        System.out.println("❌ Order could not be placed after 3 attempts due to lock contention.");
+        System.out.println("Order could not be placed after 3 attempts due to lock contention.");
         return false;
     }
 
