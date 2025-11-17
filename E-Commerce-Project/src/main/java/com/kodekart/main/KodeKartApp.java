@@ -23,7 +23,7 @@ public class KodeKartApp {
             System.out.print("Choose: ");
             String line = in.nextLine().trim();
             int ch = line.isEmpty() ? 0 : Integer.parseInt(line);
-
+           
             if (ch == 1) userService.register();
             else if (ch == 2) {
                 User u = userService.login();

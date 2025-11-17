@@ -41,7 +41,7 @@ public class OrderService {
                 for (CartItem ci : cart) {
                     Product p = productDao.findById(ci.getProductId(), con);
                     if (p == null) {
-                        System.out.println("❌ Product missing: " + ci.getProductId());
+                        System.out.println(" Product missing: " + ci.getProductId());
                         con.rollback();
                         return false;
                     }
@@ -89,18 +89,18 @@ public class OrderService {
                     con.rollback();
                     String msg = e.getMessage().toLowerCase();
                     if (msg.contains("lock wait timeout") || msg.contains("deadlock")) {
-                        System.out.println("⚠️ Lock conflict — retrying order (" + attempts + "/3)...");
+                        System.out.println(" Lock conflict — retrying order (" + attempts + "/3)...");
                         Thread.sleep(100);
                         continue;
                     }
-                    System.out.println("❌ Order failed: " + e.getMessage());
+                    System.out.println(" Order failed: " + e.getMessage());
                     return false;
                 } finally {
                     con.setAutoCommit(true);
                 }
 
             } catch (SQLException e) {
-                System.out.println("❌ Database error: " + e.getMessage());
+                System.out.println(" Database error: " + e.getMessage());
                 return false;
             } catch (InterruptedException ignored) {
             }
